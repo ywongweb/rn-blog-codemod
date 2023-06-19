@@ -1,0 +1,22 @@
+{
+  "androidDevDebug": {
+    "variant": "DevDebug",
+    "outputDir": "dev/debug",
+    "apkSuffix": "dev-debug"
+  },
+  "androidProdDebug": {
+    "variant": "ProdDebug",
+    "outputDir": "prod/debug",
+    "apkSuffix": "prod-debug"
+  },
+  "androidDevRelease": {
+    "variant": "DevRelease",
+    "outputDir": "dev/release",
+    "apkSuffix": "dev-release"
+  },
+  "androidProdRelease": {
+    "variant": "ProdRelease",
+    "outputDir": "prod/release",
+    "apkSuffix": "prod-release"
+  }
+}

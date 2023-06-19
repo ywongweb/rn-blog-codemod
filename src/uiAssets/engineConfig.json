@@ -1,0 +1,5 @@
+{
+  "engineConfig": {
+    "modules": ["{MOD_APP_NAME}"]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "devDebugSim": "devDebugSim",
+  "devDebugDevice": "devDebugDevice",
+  "devDebugAdhoc": "devDebugAdhoc",
+  "prodDebugSim": "prodDebugSim",
+  "prodDebugDevice": "prodDebugDevice",
+  "prodAppstore": "prodAppstore",
+  "release": "release",
+  "androidDevDebug": "androidDevDebug",
+  "androidProdDebug": "androidProdDebug",
+  "androidDevRelease": "androidDevRelease",
+  "androidProdRelease": "androidProdRelease"
+}

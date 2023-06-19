@@ -1,0 +1,26 @@
+{
+  "simulator": {
+    "name": "iphonesimulator",
+    "ext": "app",
+    "buildCmd": "build"
+  },
+  "android": {
+    "name": "android",
+    "ext": "apk"
+  },
+  "iphoneRun": {
+    "name": "iphoneos",
+    "ext": "app",
+    "buildCmd": "build"
+  },
+  "iphoneArchive": {
+    "name": "iphoneos",
+    "ext": "ipa",
+    "buildCmd": "archive"
+  },
+  "iphone": {
+    "name": "iphoneos",
+    "ext": "ipa",
+    "buildCmd": "archive"
+  }
+}

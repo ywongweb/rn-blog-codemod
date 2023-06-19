@@ -1,0 +1,75 @@
+{
+  "name": "{MOD_APP_NAME}",
+  "version": "0.0.1",
+  "scripts": {
+    "start-android-dev-emu": "levelOne/levelTwo/levelThree/bin/engine -p src/moduleList.json -a --native-build-type androidDevDebug",
+    "start-ios-dev-sim": "levelOne/levelTwo/levelThree/bin/engine -p src/moduleList.json -i --native-build-type devDebugSim",
+    "start-ios-dev-device": "levelOne/levelTwo/levelThree/bin/engine -p src/moduleList.json -i --native-build-type devDebugDevice --ios-devices Mango",
+    "start-empty-engine": "levelOne/levelTwo/levelThree/bin/engine -ia",
+    "del-ios-build": "rm -rf levelOne/levelTwo/levelThree/appBuilds/iphoneos && rm -rf levelOne/levelTwo/levelThree/appBuilds/iphonesimulator",
+    "del-android-build": "rm -rf levelOne/levelTwo/levelThree/appBuilds/android",
+    "list-devices-sims": "xcrun xctrace list devices",
+    "build-release-ios-dev-debug-sim": "yarn build-ios-dev-debug-sim && yarn release",
+    "build-ios-all": "yarn build-ios-dev-debug-sim && yarn build-ios-dev-adhoc && yarn build-ios-dev-debug-device && yarn build-ios-prod-debug-sim && yarn build-ios-prod-debug-device && yarn build-ios-appstore",
+    "build-ios-appstore": "node levelOne/levelTwo/levelThree/scripts/buildScripts/buildIos --native-build-type prodAppstore",
+    "build-ios-dev-debug-sim": "node levelOne/levelTwo/levelThree/scripts/buildScripts/buildIos --native-build-type devDebugSim",
+    "build-ios-dev-debug-device": "node levelOne/levelTwo/levelThree/scripts/buildScripts/buildIos --native-build-type devDebugDevice",
+    "build-ios-dev-adhoc": "node levelOne/levelTwo/levelThree/scripts/buildScripts/buildIos --native-build-type devDebugAdhoc",
+    "build-android-dev-debug": "node levelOne/levelTwo/levelThree/scripts/buildScripts/buildAndroid --native-build-type androidDevDebug",
+    "build-android-prod-debug": "node levelOne/levelTwo/levelThree/scripts/buildScripts/buildAndroid --native-build-type androidProdDebug",
+    "build-android-dev-release": "node levelOne/levelTwo/levelThree/scripts/buildScripts/buildAndroid --native-build-type androidDevRelease",
+    "build-android-prod-release": "node levelOne/levelTwo/levelThree/scripts/buildScripts/buildAndroid --native-build-type androidProdRelease",
+    "build": "tsc && node levelOne/levelTwo/levelThree/scripts/buildScripts/buildAll",
+    "release": "cd levelOne/levelTwo/levelThree && npm publish",
+    "generateConfiguration": "levelOne/levelTwo/levelThree/bin/generateConfiguration -r .. -j src/moduleList.json",
+    "start": "react-native start",
+    "prerelease": "node levelOne/levelTwo/levelThree/scripts/utils/zipAppBinary.js",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "bin": {
+    "modengine": "./bin/engine"
+  },
+  "dependencies": {
+    "argparse": "1.0.10",
+    "colors": "1.4.0",
+    "lodash": "4.17.21",
+    "react": "18.1.0",
+    "react-native": "0.70.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@tsconfig/react-native": "^2.0.2",
+    "@types/jest": "^26.0.23",
+    "@types/react": "^18.0.21",
+    "@types/react-native": "^0.70.6",
+    "@types/react-test-renderer": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.32.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "0.72.3",
+    "rn-blog-codemod": "./6.tgz",
+    "react-test-renderer": "18.1.0",
+    "typescript": "^4.8.3"
+  },
+  "engineConfig": {
+    "modules": [
+      "{MOD_APP_NAME}"
+    ]
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}

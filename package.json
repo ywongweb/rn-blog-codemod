@@ -1,0 +1,58 @@
+{
+  "name": "rn-blog-codemod",
+  "version": "1.0.0",
+  "main": "./dist/cjs/setupEngine.js",
+  "repository": "git@github.com:ywongweb/rn-blog-codemod.git",
+  "author": "Yee Wong",
+  "license": "MIT",
+  "bin": {
+    "codemod-app-id": "./dist/cjs/setupAppId.js",
+    "codemod-engine": "./dist/cjs/setupEngine.js",
+    "codemod-ui": "./dist/cjs/setupUi.js"
+  },
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/cjs/setupEngine.d.ts",
+        "default": "./dist/cjs/setupEngine.js"
+      }
+    }
+  },
+  "types": "./dist/cjs/types/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.cjs.json",
+    "postbuild": "cp -r src/engineAssets dist/cjs/engineAssets && cp -r src/uiAssets dist/cjs",
+    "prebuild": "rm -rf dist",
+    "prepack": "npm run build"
+  },
+  "prettier": {
+    "semi": false,
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "bracketSameLine": true,
+    "arrowParens": "avoid",
+    "endOfLine": "lf"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "11.0.1",
+    "@types/node": "18.16.2",
+    "@types/react": "18.0.38",
+    "eslint-config-prettier": "8.8.0",
+    "prettier": "2.8.8",
+    "react": "18.1.0",
+    "react-native": "0.70.6",
+    "ts-node": "10.9.1",
+    "typescript": "5.0.4"
+  },
+  "dependencies": {
+    "chalk": "4.1.2",
+    "dotenv": "16.0.3",
+    "escape-string-regexp": "4.0.0",
+    "fs-extra": "11.1.1"
+  }
+}
