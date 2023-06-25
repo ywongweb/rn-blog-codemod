@@ -1,6 +1,6 @@
 {
   "name": "rn-blog-codemod",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./dist/cjs/setupEngine.js",
   "repository": "git@github.com:ywongweb/rn-blog-codemod.git",
   "author": "Yee Wong",
